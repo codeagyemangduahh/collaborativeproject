@@ -1,0 +1,13 @@
+﻿﻿@model Herbal_Garden.Models.SupplierDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this Supplier?</h2>
+<a href="/Supplier/List">Cancel</a>
+<h3>Name: @Model.SupplierName</h3>
+
+<form action="/Supplier/Delete/@Model.SupplierID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

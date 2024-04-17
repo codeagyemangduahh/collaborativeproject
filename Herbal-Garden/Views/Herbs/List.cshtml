@@ -1,0 +1,12 @@
+﻿﻿@model IEnumerable<Herbal_Garden.Models.HerbsDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Herbs/New">New Herb</a>
+@foreach (var herb in Model)
+{
+    <h2><a href="/Herbs/Details/@herb.HerbsID">@herb.HerbsName</a></h2>
+    <div><@herb.Treatment</div>
+}

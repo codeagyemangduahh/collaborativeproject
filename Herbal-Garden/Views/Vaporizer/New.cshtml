@@ -1,0 +1,27 @@
+﻿﻿@model IEnumerable<Herbal_Garden.Models.SupplierDto>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Vaporizer</h2>
+<form action="/Animal/Create" method="POST">
+    <div>
+        <label>Name:</label> <input type="text" name="VaporizerName" />
+    </div>
+   
+    <div>
+        <label>Supplier:</label>
+        <select name="SupplierID">
+            @foreach (var supplier in Model)
+            {
+                <option value="@supplier.SupplierID">@supplier.SupplierName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Supplier" />
+
+    </div>
+</form>

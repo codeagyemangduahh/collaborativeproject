@@ -1,0 +1,16 @@
+﻿﻿@model IEnumerable<Herbal_Garden.Models.VaporizerDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Vaporizer/New">New Vaporizer</a>
+@foreach (var Vaporizer in Model)
+{
+    <h2><a href="/Vaporizer/Details/@Vaporizer.VaporizerID">@Vaporizer.VaporizerName</a></h2>
+    
+    <div>Supplier: @Vaporizer.SupplierName</div>
+
+
+}
+

@@ -1,0 +1,21 @@
+﻿﻿@model Herbal_Garden.Models.SupplierDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Supplier</h2>
+<form action="/Supplier/Update/@Model.SupplierID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Supplier ID *@
+        <input type="text" name="SupplierID" value="@Model.SupplierID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="SupplierName" value="@Model.SupplierName" />
+    </div>
+ 
+    <div>
+        <input type="submit" value="Update Supplier" />
+
+    </div>
+</form>

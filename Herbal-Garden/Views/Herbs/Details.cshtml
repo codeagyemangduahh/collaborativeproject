@@ -1,0 +1,24 @@
+﻿﻿@model Herbal_Garden.Models.ViewModels.DetailsHerbs
+
+
+@{
+    ViewBag.Title = "View";
+}
+
+<a href="/Herbs/List">Go back to list</a>
+<br />
+<a href="/Herbs/Edit/@Model.SelectedHerbs.HerbsID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Herbs/DeleteConfirm/@Model.SelectedHerbs.HerbsID">Delete</a>
+<h2>@Model.SelectedHerbs.HerbsName</h2>
+
+
+
+<div>
+    <h3>Compatible with:</h3>
+    @foreach (var vaporizer in Model.ComaptibleVaporizer)
+    {
+        <a href="/Vaporizer/Details/@vaporizer.VaporizerID">@vaporizer.VaporizerName</a><br />
+
+    }
+</div>

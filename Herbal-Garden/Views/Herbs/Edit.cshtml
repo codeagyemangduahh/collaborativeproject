@@ -1,0 +1,24 @@
+﻿﻿@model Herbal_Garden.Models.HerbsDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Herbs</h2>
+<form action="/Herbs/Update/@Model.HerbsID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Herb ID *@
+        <input type="text" name="HerbID" value="@Model.HerbsID" />
+    </div>
+    <div>
+        <label>Herb Name:</label> <input type="text" name="HerbsName" value="@Model.HerbsName" />
+    </div>
+    <div>
+        <label>Treatment:</label> <input type="text" name="Treatment" value="@Model.Treatment" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update Herbs" />
+
+    </div>
+</form>

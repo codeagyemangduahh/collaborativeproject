@@ -1,0 +1,13 @@
+﻿﻿@model Herbal_Garden.Models.GardenDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this Garden?</h2>
+<a href="/Garden/List">Cancel</a>
+<h3>Name: @Model.GardenName</h3>
+<p>Soil Type: @Model.SoilType</p>
+<form action="/Garden/Delete/@Model.GardenID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

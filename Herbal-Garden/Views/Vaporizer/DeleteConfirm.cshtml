@@ -1,0 +1,19 @@
+﻿﻿@model Herbal_Garden.Models.VaporizerDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this Vaporizer?</h2>
+<nav>
+    <ul>
+        <li><a href="/Vaporizer/List">Cancel</a></li>
+        <li><a href="/Vaporizer/Edit/@Model.VaporizerID">Update</a></li>
+    </ul>
+</nav>
+<h3>@Model.VaporizerName</h3>
+
+<div>Species: @Model.SupplierName</div>
+<form action="/Vaporizer/Delete/@Model.VaporizerID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

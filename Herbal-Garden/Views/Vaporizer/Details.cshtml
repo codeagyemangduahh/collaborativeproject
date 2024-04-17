@@ -1,0 +1,36 @@
+﻿﻿@model Herbal_Garden.Models.ViewModels.DetailsVaporizer
+@{
+    ViewBag.Title = "View";
+}
+
+<a href="/Vaporizer/List">Go back to list</a>
+<br />
+<a href="/Vaporizer/Edit/@Model.SelectedVaporizer.VaporizerID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Vaporizer/DeleteConfirm/@Model.SelectedVaporizer.VaporizerID">Delete</a>
+<h2>@Model.SelectedVaporizer.VaporizerName</h2>
+
+<div>species: @Model.SelectedVaporizer.SupplierName</div>
+
+<div>
+    <h2>Herbs compatible with @Model.SelectedVaporizer.VaporizerName:</h2>
+    @foreach (var herbs in Model.CompatibleHerbs)
+    {
+
+        <a href="/Keeper/Details/@herbs.HerbsID">@herbs.HerbsName </a> <a style="color:#ab2020;" href="/Animal/Unassociate/@Model.SelectedAnimal.AnimalID?KeeperID=@keeper.KeeperID">[x]</a><br />
+    }
+
+    <div>
+        <h4>Add new herbs to work with @Model.SelectedVaporizer.VaporizerName</h4>
+        <form method="POST" action="/Vaporizer/Associate/@Model.SelectedVaporizer.VaporizerName">
+            <select name="HerbsID">
+                @foreach (var herbs in Model.AvailableHerbs)
+                {
+                    <option value="@herbs.HerbsID">@herbs.HerbsName</option>
+                }
+
+            </select>
+            <input type="submit" value="Associate Herbs" />
+        </form>
+    </div>
+</div>

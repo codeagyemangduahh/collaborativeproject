@@ -1,0 +1,24 @@
+﻿﻿@model Herbal_Garden.Models.ViewModels.DetailsGarden
+
+
+@{
+    ViewBag.Title = "View";
+}
+
+<a href="/Garden/List">Go back to list</a>
+<br />
+<a href="/Garden/Edit/@Model.SelectedGarden.GardenID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Species/DeleteConfirm/@Model.SelectedGarden.GardenID">Delete</a>
+<h2>@Model.SelectedGarden.GardenName</h2>
+<div>Soil Type: @Model.SelectedGarden.SoilType/div>
+
+
+<div style="margin-top:100px;">
+    <h3>Herbs related to this Garden</h3>
+    @foreach (var herbs in Model.RelatedHerb)
+    {
+        <a href="/Herbs/Details/@herbs.HerbsID">@herbs.HerbsName</a>
+
+    }
+</div>

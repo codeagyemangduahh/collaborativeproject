@@ -1,0 +1,24 @@
+﻿﻿@model Herbal_Garden.Models.ViewModels.DetailsSupplier
+
+
+@{
+    ViewBag.Title = "View";
+}
+
+<a href="/Supplier/List">Go back to list</a>
+<br />
+<a href="/Supplier/Edit/@Model.SelectedSupplier.SupplierID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Species/DeleteConfirm/@Model.SelectedSupplier.SupplierID">Delete</a>
+<h2>@Model.SelectedSupplier.SupplierName</h2>
+
+
+
+<div style="margin-top:100px;">
+    <h3>Vaporizers related to this Supplier</h3>
+    @foreach (var vaporizer in Model.RelatedVaporizer)
+    {
+        <a href="/Vaporizer/Details/@vaporizer.VaporizerID">@vaporizer.VaporizerName</a>
+
+    }
+</div>

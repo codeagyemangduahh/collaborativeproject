@@ -1,0 +1,19 @@
+﻿
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Herb</h2>
+<form action="/Herbs/Create" method="POST">
+    <div>
+        <label>Herb Name:</label> <input type="text" name="HerbsName" />
+    </div>
+    <div>
+        <label>Treatment:</label> <input type="text" name="Treatment" />
+    </div>
+    <div>
+        <input type="submit" value="Create Herbs" />
+
+    </div>
+</form>

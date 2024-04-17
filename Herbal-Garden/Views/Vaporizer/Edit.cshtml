@@ -1,0 +1,38 @@
+﻿﻿@model Herbal_Garden.Models.ViewModels.UpdateVaporizer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Vaporizer</h2>
+<form action="/Vaporizer/Update/@Model.SelectedVaporizer.VaporizerID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Vaporizer ID *@
+        <input type="text" name="VaporizerID" value="@Model.SelectedVaporizer.VaporizerID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="VaporizerName" value="@Model.SelectedVaporizer.VaporizerName" />
+    </div>
+    
+    <div>
+        <label>Supplier ID:</label>
+
+        <select name="SupplierID">
+            @foreach (var supplier in Model.SupplierOptions)
+            {
+                string selected = "";
+                if (supplier.SupplierID == Model.SelectedVaporizer.SupplierID)
+                {
+                    selected = "selected";
+                }
+                <option value="@supplier.SupplierID" @selected>@supplier.SupplierName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Animal" />
+
+    </div>
+</form>
+

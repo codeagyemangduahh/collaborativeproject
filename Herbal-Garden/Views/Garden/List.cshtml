@@ -1,0 +1,13 @@
+﻿﻿@model IEnumerable<Herbal_Garden.Models.GardenDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Garden/New">New Garden</a>
+@foreach (var garden in Model)
+{
+    <h2><a href="/Garden/Details/@garden.GardenID">@garden.GardenName</a></h2>
+    <div>Soiltype: @garden.SoilType</div>
+
+}
